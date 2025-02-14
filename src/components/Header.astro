@@ -1,0 +1,50 @@
+---
+import HomeIcon from "./Icons/HomeIcon.astro";
+
+const navItems = [
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
+  },
+  {
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mí",
+  },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "mailto:miduga@gmail.com",
+  },
+];
+---
+
+<header>
+  <nav
+    class="flex items-center justify-center h-[20px] px-1 text-sm font-medium rounded-full"
+  >
+    <a
+      class="hover:bg-white/10 rounded-full px-3 transition"
+      href="/#top"
+      aria-label="home"><HomeIcon class="size-5" /></a
+    >
+
+    {
+      navItems.map((item) => (
+        <a
+          class="hover:bg-white/10 rounded-full px-2 transition"
+          aria-label={item.label}
+          href={item.url}
+        >
+          {item.title}
+        </a>
+      ))
+    }
+  </nav>
+</header>

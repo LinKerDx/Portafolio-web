@@ -1,0 +1,124 @@
+---
+import JavaScript from "./Icons/JavaScript.astro";
+import Tailwind from "./Icons/Tailwind.astro";
+import ReactJS from "./Icons/ReactJS.astro";
+import CSS from "./Icons/CSS.astro";
+import AstroJS from "./Icons/AstroJS.astro";
+import LinkButton from "./LinkButton.astro";
+import GithubIcon from "./Icons/GithubIcon.astro";
+import LinkIcon from "./Icons/LinkIcon.astro";
+
+const TAGS = {
+  Astro: {
+    name: "Astro",
+    class: "border text-white",
+    icon: AstroJS,
+  },
+  Tailwind: {
+    name: "Tailwind",
+    class: "border text-white",
+    icon: Tailwind,
+  },
+  React: {
+    name: "React",
+    class: " border bg-[#03C0E2]-500 text-white",
+    icon: ReactJS,
+  },
+  CSS: {
+    name: "CSS",
+    class: " border text-white",
+    icon: CSS,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    class: "border text-white",
+    icon: JavaScript,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Muebles Maderosos",
+    description:
+      "Landing page de una mueblería con una lista de productos y diseño responsivo",
+    link: "#",
+    github: "https://github.com/LinKerDx/Pagina-de-Madera",
+    imagen: "/PaginaWeb.webp",
+    tags: [TAGS.JavaScript, TAGS.CSS, TAGS.Tailwind, TAGS.Astro],
+  },
+  {
+    title: "CALMATE - Calculadora de materiales",
+    description:
+      "Creada 100% con JavaScript desde cero, que facilita el peso de piezas de acero creada por mí",
+    link: "#",
+    github: "https://github.com/LinKerDx/Proyecto1",
+    imagen: "/Projects/svgl.webp",
+    tags: [TAGS.JavaScript, TAGS.CSS],
+  },
+  {
+    title: "Excell JS",
+    description:
+      "Creada 100% con JavaScript desde cero, hecha desde una prueba realizada por midudev agregando funcionalidades extras",
+    link: "#",
+    github:
+      "https://github.com/LinKerDx/JavaScript-Proyects/tree/main/Excell%20JS%20puro",
+    imagen: "/Projects/ExcellJS.webp",
+    tags: [TAGS.JavaScript, TAGS.CSS],
+  },
+  {
+    title: "Tier Maker",
+    description:
+      "Creada 100% con JavaScript desde cero, hecha desde una prueba realizada por midudev arreglando algunos bugs",
+    link: "#",
+    github:
+      "https://github.com/LinKerDx/JavaScript-Proyects/tree/main/Drag%20n%20Drop%20Tier%20maker",
+    imagen: "/Projects/TierMaker.webp",
+    tags: [TAGS.JavaScript, TAGS.CSS],
+  },
+];
+---
+
+<div class="flex flex-col">
+  {
+    PROJECTS.map(({ title, description, tags, imagen, link, github }) => (
+      <article class="border-b py-16">
+        <h3 class="text-2xl font-semibold text-[#D1872D] mb-2">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 flex-cols-2 md:flex-row">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text.xs ${tag.class} items-center py-1 px-2.5`}
+              >
+                <tag.icon class="size-3 md:size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <div class=" my-4 relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+          <img
+            loading="lazy"
+            class="w-[250px] h-[150px] md:w-auto md:h-auto transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105 rounded"
+            src={imagen}
+            alt={`Captura de pantalla del proyecto ${imagen}`}
+          />
+        </div>
+        <div class="flex justify-center items-center gap-x-8 mb-2">
+          {github && (
+            <LinkButton href={github}>
+              <GithubIcon class="size-6 " />
+              Ver código fuente
+            </LinkButton>
+            /* Enlace para sitio web
+            <LinkButton href={link}>
+              <LinkIcon class="size-6 " />
+              Ir al sitio
+            </LinkButton>
+            */
+          )}
+        </div>
+      </article>
+    ))
+  }
+</div>
