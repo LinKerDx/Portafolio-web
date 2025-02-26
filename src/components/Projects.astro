@@ -47,9 +47,9 @@ const PROJECTS = [
     tags: [TAGS.JavaScript, TAGS.CSS, TAGS.Tailwind, TAGS.Astro],
   },
   {
-    title: "CALMATE - Calculadora de materiales",
+    title: "CALMATE",
     description:
-      "Creada 100% con JavaScript desde cero, que facilita el peso de piezas de acero creada por mí",
+      "Creada 100% con JavaScript desde cero, calculadora que facilita el peso de piezas de acero creada por mí",
     link: "#",
     github: "https://github.com/LinKerDx/Proyecto1",
     imagen: "/Projects/svgl.webp",
@@ -81,42 +81,44 @@ const PROJECTS = [
 <div class="flex flex-col">
   {
     PROJECTS.map(({ title, description, tags, imagen, link, github }) => (
-      <article class="border-b py-16">
-        <h3 class="text-2xl font-semibold text-[#D1872D] mb-2">{title}</h3>
-        <p class="text-lg mb-4 text-pretty">{description}</p>
-        <ul class="flex gap-x-2 flex-cols-2 md:flex-row">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text.xs ${tag.class} items-center py-1 px-2.5`}
-              >
-                <tag.icon class="size-3 md:size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <div class=" my-4 relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <article class=" py-16 flex flex-col gap-x-16 gap-y-8 md:flex-row  ">
+        <div class="flex flex-col justify-center alight-center gap-y-4 md:gap-y-8 max-w-[500px] ">
+          <h3 class="text-2xl font-semibold text-yellow-200/90 ">{title}</h3>
+          <p class="text-lg text-pretty max-w-[600px] ">{description}</p>
+          <ul class="flex gap-x-2 flex-cols-2 md:flex-row">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text.xs ${tag.class} items-center py-1 px-2.5`}
+                >
+                  <tag.icon class="size-3 md:size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p>
+            {github && (
+              <LinkButton href={github}>
+                <GithubIcon class="size-6 " />
+                Ver código fuente
+              </LinkButton>
+              /* Enlace para sitio web
+            <LinkButton href={link}>
+            <LinkIcon class="size-6 " />
+            Ir al sitio
+            </LinkButton>
+            */
+            )}
+          </p>
+        </div>
+        <div class="max-w-[600px] transition duration-500 ease-in-out transform overflow-clip rounded-xl ">
           <img
             loading="lazy"
-            class="w-[250px] h-[150px] md:w-auto md:h-auto transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105 rounded"
+            class="aspect-video object-cover transition duration-500 hover:scale-110 rounded"
             src={imagen}
             alt={`Captura de pantalla del proyecto ${imagen}`}
           />
-        </div>
-        <div class="flex justify-center items-center gap-x-8 mb-2">
-          {github && (
-            <LinkButton href={github}>
-              <GithubIcon class="size-6 " />
-              Ver código fuente
-            </LinkButton>
-            /* Enlace para sitio web
-            <LinkButton href={link}>
-              <LinkIcon class="size-6 " />
-              Ir al sitio
-            </LinkButton>
-            */
-          )}
         </div>
       </article>
     ))
