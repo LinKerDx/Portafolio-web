@@ -7,8 +7,14 @@ import AstroJS from "./Icons/AstroJS.astro";
 import LinkButton from "./LinkButton.astro";
 import GithubIcon from "./Icons/GithubIcon.astro";
 import LinkIcon from "./Icons/LinkIcon.astro";
+import NextJS from "./Icons/NextJS.astro";
 
 const TAGS = {
+  NextJS: {
+    name: "NextJS",
+    class: "border text-white",
+    icon: NextJS,
+  },
   Astro: {
     name: "Astro",
     class: "border text-white",
@@ -37,6 +43,15 @@ const TAGS = {
 };
 
 const PROJECTS = [
+  {
+    title: "World Recipes",
+    description:
+      "Página web para mostrar los ingredientes de los diferentes tipos de recetas, usando useState, useRef, useEffect y costumeHooks",
+    link: "#",
+    github: "https://github.com/LinKerDx/aplicacion-recetas",
+    imagen: "/Projects/recetas.webp",
+    tags: [TAGS.JavaScript, TAGS.CSS, TAGS.Tailwind, TAGS.NextJS, TAGS.React],
+  },
   {
     title: "Muebles Maderosos",
     description:
