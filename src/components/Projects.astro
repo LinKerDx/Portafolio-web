@@ -8,6 +8,7 @@ import LinkButton from "./LinkButton.astro";
 import GithubIcon from "./Icons/GithubIcon.astro";
 import LinkIcon from "./Icons/LinkIcon.astro";
 import NextJS from "./Icons/NextJS.astro";
+import Typescript from "./Icons/Typescript.astro";
 
 const TAGS = {
   NextJS: {
@@ -40,6 +41,11 @@ const TAGS = {
     class: "border text-white",
     icon: JavaScript,
   },
+  TypeScript: {
+    name: "TypeScript",
+    class: "border text-white",
+    icon: Typescript,
+  },
 };
 
 const PROJECTS = [
@@ -50,7 +56,7 @@ const PROJECTS = [
     link: "#",
     github: "https://github.com/LinKerDx/aplicacion-recetas",
     imagen: "/Projects/recetas.webp",
-    tags: [TAGS.JavaScript, TAGS.CSS, TAGS.Tailwind, TAGS.NextJS, TAGS.React],
+    tags: [TAGS.TypeScript, TAGS.Tailwind, TAGS.NextJS],
   },
   {
     title: "Muebles Maderosos",
