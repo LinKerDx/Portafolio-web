@@ -9,6 +9,7 @@ import GithubIcon from "./Icons/GithubIcon.astro";
 import LinkIcon from "./Icons/LinkIcon.astro";
 import NextJS from "./Icons/NextJS.astro";
 import Typescript from "./Icons/Typescript.astro";
+import EnProceso from "./Icons/EnProceso.astro";
 
 const TAGS = {
   NextJS: {
@@ -46,14 +47,35 @@ const TAGS = {
     class: "border text-white",
     icon: Typescript,
   },
+  EnProceso: {
+    name: "Trabajando",
+    class: "border text-white",
+    icon: EnProceso,
+  },
 };
 
 const PROJECTS = [
   {
+    title: "Mentes Sanas",
+    description:
+      "Landing page muestra para una psicóloga con animaciones y diseño responsivo ",
+    link: "https://psy-services-v1.vercel.app/",
+    github: "https://github.com/LinKerDx/psy-services-v1",
+    imagen: "/Projects/MentesSanas.webp",
+    tags: [TAGS.TypeScript, TAGS.Tailwind, TAGS.Astro, TAGS.EnProceso],
+  },
+  {
+    title: "La Velada del Año 5",
+    description:
+      "Landing page de la velada del año 5 en donde participan muchos streamers en una pelea de box",
+    imagen: "/Projects/lavelada.webp",
+    tags: [TAGS.TypeScript, TAGS.Tailwind, TAGS.Astro, TAGS.EnProceso],
+  },
+  {
     title: "World Recipes",
     description:
       "Página web para mostrar los ingredientes de los diferentes tipos de recetas, usando useState, useRef, useEffect y costumeHooks",
-    link: "#",
+    link: "https://aplicacion-recetas.vercel.app/",
     github: "https://github.com/LinKerDx/aplicacion-recetas",
     imagen: "/Projects/recetas.webp",
     tags: [TAGS.TypeScript, TAGS.Tailwind, TAGS.NextJS],
@@ -62,7 +84,6 @@ const PROJECTS = [
     title: "Muebles Maderosos",
     description:
       "Landing page de una mueblería con una lista de productos y diseño responsivo",
-    link: "#",
     github: "https://github.com/LinKerDx/Pagina-de-Madera",
     imagen: "/PaginaWeb.webp",
     tags: [TAGS.JavaScript, TAGS.Tailwind, TAGS.Astro],
@@ -71,7 +92,6 @@ const PROJECTS = [
     title: "CALMATE",
     description:
       "Creada 100% con JavaScript desde cero, calculadora que facilita el peso de piezas de acero creada por mí",
-    link: "#",
     github: "https://github.com/LinKerDx/Proyecto1",
     imagen: "/Projects/svgl.webp",
     tags: [TAGS.JavaScript, TAGS.CSS],
@@ -80,7 +100,6 @@ const PROJECTS = [
     title: "Excell JS",
     description:
       "Creada 100% con JavaScript desde cero, hecha desde una prueba realizada por midudev agregando funcionalidades extras",
-    link: "#",
     github:
       "https://github.com/LinKerDx/JavaScript-Proyects/tree/main/Excell%20JS%20puro",
     imagen: "/Projects/ExcellJS.webp",
@@ -90,7 +109,6 @@ const PROJECTS = [
     title: "Tier Maker",
     description:
       "Creada 100% con JavaScript desde cero, hecha desde una prueba realizada por midudev arreglando algunos bugs",
-    link: "#",
     github:
       "https://github.com/LinKerDx/JavaScript-Proyects/tree/main/Drag%20n%20Drop%20Tier%20maker",
     imagen: "/Projects/TierMaker.webp",
@@ -124,12 +142,12 @@ const PROJECTS = [
                 <GithubIcon class="size-6 " />
                 Ver código fuente
               </LinkButton>
-              /* Enlace para sitio web
-            <LinkButton href={link}>
-            <LinkIcon class="size-6 " />
-            Ir al sitio
-            </LinkButton>
-            */
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <LinkIcon class="size-6 " />
+                Ir al sitio
+              </LinkButton>
             )}
           </p>
         </div>
