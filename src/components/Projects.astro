@@ -10,6 +10,8 @@ import LinkIcon from "./Icons/LinkIcon.astro";
 import NextJS from "./Icons/NextJS.astro";
 import Typescript from "./Icons/Typescript.astro";
 import EnProceso from "./Icons/EnProceso.astro";
+import ZodIcon from "./Icons/ZodIcon.astro";
+import ResendIcon from "./Icons/ResendIcon.astro";
 
 const TAGS = {
   NextJS: {
@@ -17,6 +19,12 @@ const TAGS = {
     class: "border text-white",
     icon: NextJS,
   },
+  Zod: {
+    name: "Zod",
+    class: "border text-white",
+    icon: ZodIcon,
+  },
+
   Astro: {
     name: "Astro",
     class: "border text-white",
@@ -52,6 +60,11 @@ const TAGS = {
     class: "border text-white",
     icon: EnProceso,
   },
+  Resend: {
+    name: "Resend",
+    class: "border text-white",
+    icon: ResendIcon,
+  },
 };
 
 const PROJECTS = [
@@ -62,7 +75,7 @@ const PROJECTS = [
     link: "https://psy-services-v1.vercel.app/",
     github: "https://github.com/LinKerDx/psy-services-v1",
     imagen: "/Projects/MentesSanas.webp",
-    tags: [TAGS.TypeScript, TAGS.Tailwind, TAGS.Astro, TAGS.EnProceso],
+    tags: [TAGS.TypeScript, TAGS.Tailwind, TAGS.Astro, TAGS.Zod, TAGS.Resend],
   },
   {
     title: "La Velada del Año 5",
